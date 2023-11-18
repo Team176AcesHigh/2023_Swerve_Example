@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+<!--        <File name="MyFile" fileName="/home/lvuser/all.log" immediateFlush="false" append="false" bufferedIO="true">-->
+<!--            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>-->
+<!--        </File>-->
+    </Appenders>
+    <Loggers>
+        <Logger name="RobotLogger" level="error">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="MyFile" />
+        </Logger>
+        <Logger name="org.aceshigh176.lib.datastreamer.DataStreamer" level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="MyFile" />
+        </Logger>
+        <Logger name="org.aceshigh176.lib.externalactions.NTMutableConstantsManager" level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="MyFile" />
+        </Logger>
+        <Logger name="org.aceshigh176.lib.datastreamer.NTGroupDataStorePublisher" level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="MyFile" />
+        </Logger>
+        <Logger name="org.aceshigh176.lib.datastreamer.datastores.GroupDataStore" level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="MyFile" />
+        </Logger>
+        <Logger name="org.aceshigh176.lib.externalactions.ExternalActionManager" level="warn">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="MyFile" />
+        </Logger>
+        <Root level="debug">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="MyFile" />
+        </Root>
+    </Loggers>
+</Configuration>
